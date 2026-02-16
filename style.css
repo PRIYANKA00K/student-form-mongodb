@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+}
+
+/* Center container created by <center> */
+center {
+  background: #ffffff;
+  width: 360px;
+  margin: 80px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Popup background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup box */
+.popup p {
+  margin-bottom: 20px;
+}
+
+.popup > p {
+  display: none;
+}
+
+.popup button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Actual popup card */
+.popup::before {
+  content: "";
+}
+
+/* Popup inner box */
+.popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal {
+  background: #ffffff;
+  width: 360px;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+/* Active State */
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-overlay.show .modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Title */
+.modal h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Message */
+.modal p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.modal-btn {
+  padding: 10px 20px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-btn:hover {
+  background: #4338ca;
+}
