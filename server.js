@@ -10,13 +10,13 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static("public"));
 
-// 🔗 MongoDB Connection
+// MongoDB Connection
 mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
 
-// 📥 API to save student data
+// API to save student data
 app.post("/add-student", async (req, res) => {
   try {
     const student = new Student(req.body);
@@ -27,7 +27,7 @@ app.post("/add-student", async (req, res) => {
   }
 });
 
-// 🚀 Start Server
+// Start Server
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
